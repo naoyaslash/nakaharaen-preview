@@ -1,0 +1,20 @@
+{
+  "updatedAt": "2026-03-11",
+  "services": [
+    {
+      "id": "day",
+      "name": "地域密着型通所介護（デイサービス）",
+      "slots": [
+        { "label": "男女問わず", "count": 14 }
+      ]
+    },
+    {
+      "id": "short",
+      "name": "短期入所生活介護（ショートステイ）",
+      "slots": [
+        { "label": "男性", "count": 2 },
+        { "label": "女性", "count": 2 }
+      ]
+    }
+  ]
+}

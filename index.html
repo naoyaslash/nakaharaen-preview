@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中原苑【特別養護老人ホーム】| 社会福祉法人 磯子コスモス福祉会</title>
+  <meta name="description" content="横浜市磯子区の特別養護老人ホーム中原苑。あたたかい心で、あなたらしい暮らしを支えます。デイサービス・ショートステイ・居宅介護支援。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="images/logo.png" alt="中原苑【特別養護老人ホーム】" class="logo-img">
+      </a>
+
+      <nav class="main-nav" id="main-nav">
+        <ul class="nav-list">
+          <li><a href="/about">施設紹介</a></li>
+          <li class="nav-dropdown">
+            <a href="#services">サービス内容</a>
+            <ul class="dropdown-menu">
+              <li><a href="/service/tokuyou/">特別養護老人ホーム</a></li>
+              <li><a href="/service/yobou/">居宅介護支援</a></li>
+              <li><a href="/service/day/">デイサービス</a></li>
+              <li><a href="/service/short/">ショートステイ</a></li>
+            </ul>
+          </li>
+          <li><a href="/school/jitsumusya/">講習案内</a></li>
+          <li><a href="/recruit">職員募集</a></li>
+          <li><a href="/businessplan">セラエクサ&reg;</a></li>
+          <li><a href="#access">アクセス</a></li>
+        </ul>
+      </nav>
+
+      <a href="tel:045-776-3100" class="header-phone-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        045-776-3100
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-bg">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="images/hero.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <a href="/form/" class="btn-primary">
+        お問い合わせ
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========== AVAILABILITY ========== -->
+  <section class="availability" id="availability-section">
+    <div class="container">
+      <div class="availability-header fade-in">
+        <div class="section-label">Availability</div>
+        <h2 class="section-title">空き情報</h2>
+        <p class="section-subtitle">現在の申込可能者数</p>
+      </div>
+      <div class="availability-cards" id="availability-cards">
+        <!-- Loaded dynamically from availability.json -->
+      </div>
+      <p class="availability-date" id="availability-date"></p>
+      <p class="availability-note fade-in">※ ケアマネージャー様からのお問い合わせも受け付けております</p>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT / DIRECTOR ========== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image fade-in">
+          <img src="images/director.jpg" alt="理事長 鈴木秀雄" class="director-photo">
+          <div class="about-image-accent"></div>
+        </div>
+        <div class="about-content fade-in">
+          <div class="section-label">About</div>
+          <h2 class="section-title">ごあいさつ</h2>
+          <div class="director-info">
+            <p class="director-org">社会福祉法人 磯子コスモス福祉会</p>
+            <p class="director-title">理事長</p>
+            <p class="director-name">鈴木 秀雄</p>
+            <p class="director-credentials">関東学院大学名誉教授、体育学・余暇教育学博士、Ph.D.</p>
+          </div>
+          <p class="about-text">
+            中原苑は「地域福祉の拠点」として、ご利用者お一人おひとりの尊厳を大切にし、
+            あたたかい心で日常生活を支援いたします。健康寿命の延伸を目指した独自の運動プログラム
+            「セラエクサ&reg;」を取り入れ、心身ともに豊かな暮らしをお届けします。
+          </p>
+          <a href="/about" class="link-arrow">
+            理事長紹介の詳細はこちら
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">Services</div>
+        <h2 class="section-title">サービス内容</h2>
+        <p class="section-subtitle">中原苑がご提供する介護・福祉サービス</p>
+      </div>
+
+      <div class="services-grid">
+
+        <a href="/service/tokuyou/" class="service-card fade-in">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 42V20L24 6l18 14v22H6z"/>
+              <path d="M18 42V30h12v12"/>
+              <circle cx="24" cy="21" r="3"/>
+            </svg>
+          </div>
+          <h3 class="service-name">介護老人福祉施設<small>〈特養〉</small></h3>
+          <p class="service-desc">常時介護を必要とする方の生活の場として、安心できる日常をご提供します</p>
+          <span class="service-link">詳しくはこちら <span class="arrow">&rarr;</span></span>
+        </a>
+
+        <a href="/service/yobou/" class="service-card fade-in">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="8" y="4" width="32" height="40" rx="2"/>
+              <line x1="16" y1="14" x2="32" y2="14"/>
+              <line x1="16" y1="22" x2="32" y2="22"/>
+              <line x1="16" y1="30" x2="26" y2="30"/>
+              <path d="M14 38l3 3 6-6"/>
+            </svg>
+          </div>
+          <h3 class="service-name">居宅介護支援</h3>
+          <p class="service-desc">ケアプランの作成から介護に関するご相談まで、在宅生活をサポートします</p>
+          <span class="service-link">詳しくはこちら <span class="arrow">&rarr;</span></span>
+        </a>
+
+        <a href="/service/day/" class="service-card fade-in">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="24" cy="14" r="8"/>
+              <path d="M24 6V4"/>
+              <path d="M24 24v2"/>
+              <path d="M16 14h-2"/>
+              <path d="M34 14h-2"/>
+              <path d="M18.34 8.34l-1.41-1.41"/>
+              <path d="M31.07 19.66l-1.41-1.41"/>
+              <path d="M18.34 19.66l-1.41 1.41"/>
+              <path d="M31.07 8.34l1.41-1.41"/>
+              <path d="M8 36c0-6 7.16-10 16-10s16 4 16 10"/>
+              <line x1="8" y1="42" x2="40" y2="42"/>
+            </svg>
+          </div>
+          <h3 class="service-name">デイサービス</h3>
+          <p class="service-desc">日帰りでの介護・機能訓練を通じて、いきいきとした毎日をお手伝いします</p>
+          <span class="service-link">詳しくはこちら <span class="arrow">&rarr;</span></span>
+        </a>
+
+        <a href="/service/short/" class="service-card fade-in">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="6" y="18" width="36" height="22" rx="3"/>
+              <path d="M12 18v-4a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v4"/>
+              <circle cx="34" cy="8" r="2"/>
+              <path d="M30 8h-2"/>
+              <line x1="6" y1="30" x2="42" y2="30"/>
+            </svg>
+          </div>
+          <h3 class="service-name">ショートステイ</h3>
+          <p class="service-desc">短期間の入所を通じて、ご家族の介護負担を軽減いたします</p>
+          <span class="service-link">詳しくはこちら <span class="arrow">&rarr;</span></span>
+        </a>
+
+        <a href="/businessplan" class="service-card service-card--accent fade-in">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M24 42s-14-8.35-14-19.5C10 14.492 16.268 8 24 8s14 6.492 14 14.5S24 42 24 42z"/>
+              <circle cx="24" cy="22" r="5"/>
+              <path d="M24 17v-3"/>
+              <path d="M24 30v-3"/>
+              <path d="M19 22h-3"/>
+              <path d="M32 22h-3"/>
+            </svg>
+          </div>
+          <h3 class="service-name">セラエクサ&reg;</h3>
+          <p class="service-desc">独自の生活習慣病予防・要介護予防運動プログラムで健康寿命の延伸を</p>
+          <span class="service-link">詳しくはこちら <span class="arrow">&rarr;</span></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== NEWS ========== -->
+  <section class="news" id="news">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">News</div>
+        <h2 class="section-title">お知らせ</h2>
+        <p class="section-subtitle">最近の中原苑の動静・催事</p>
+      </div>
+      <div class="news-list" id="news-list">
+        <!-- Loaded dynamically from news.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ACCESS ========== -->
+  <section class="access" id="access">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">Access</div>
+        <h2 class="section-title">アクセス</h2>
+      </div>
+      <div class="access-grid fade-in">
+        <div class="access-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.123!2d139.617!3d35.393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z5Lit5Y6f6IuR!5e0!3m2!1sja!2sjp!4v1709000000000"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="中原苑の地図">
+          </iframe>
+        </div>
+        <div class="access-info">
+          <div class="access-info-inner">
+            <h3>施設情報</h3>
+            <dl class="access-details">
+              <dt>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                住所
+              </dt>
+              <dd>〒235-0036<br>神奈川県横浜市磯子区中原3-6-10</dd>
+
+              <dt>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                TEL
+              </dt>
+              <dd><a href="tel:045-776-3500">045-776-3500</a></dd>
+
+              <dt>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                営業時間
+              </dt>
+              <dd>9:00〜17:30</dd>
+
+              <dt>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                定休日
+              </dt>
+              <dd>日曜・祝日</dd>
+
+              <dt>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Email
+              </dt>
+              <dd><a href="mailto:nakaharaen@muh.biglobe.ne.jp">nakaharaen@muh.biglobe.ne.jp</a></dd>
+            </dl>
+            <a href="/form/" class="btn-primary btn-primary--small">
+              お問い合わせフォーム
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-about">
+          <div class="footer-logo">
+            <span class="footer-logo-main">中原苑</span>
+            <span class="footer-logo-badge">特別養護老人ホーム</span>
+          </div>
+          <p class="footer-org">社会福祉法人 磯子コスモス福祉会</p>
+          <p class="footer-address">〒235-0036 神奈川県横浜市磯子区中原3-6-10</p>
+          <p class="footer-tel">TEL: <a href="tel:045-776-3500">045-776-3500</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>サイトマップ</h4>
+          <ul>
+            <li><a href="/about">施設紹介</a></li>
+            <li><a href="/service/tokuyou/">特別養護老人ホーム</a></li>
+            <li><a href="/service/yobou/">居宅介護支援</a></li>
+            <li><a href="/service/day/">デイサービス</a></li>
+            <li><a href="/service/short/">ショートステイ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>その他</h4>
+          <ul>
+            <li><a href="/school/jitsumusya/">講習案内</a></li>
+            <li><a href="/recruit">職員募集</a></li>
+            <li><a href="/businessplan">セラエクサ&reg;</a></li>
+            <li><a href="/yakuin">役員・評議員</a></li>
+            <li><a href="/form/">お問い合わせ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 社会福祉法人 磯子コスモス福祉会 中原苑</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
