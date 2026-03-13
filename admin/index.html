@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>管理画面 — 中原苑</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <h1>中原苑 <span>管理画面</span></h1>
+      <button class="btn-logout">ログアウト</button>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="alert alert-success" id="success-alert" style="display:none;"></div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <a href="#" class="tab active" data-tab="availability">空き情報</a>
+      <a href="#" class="tab" data-tab="news">お知らせ管理</a>
+    </div>
+
+    <!-- ===== TAB: Availability ===== -->
+    <section class="panel" id="tab-availability">
+      <h2>空き情報の更新</h2>
+      <p class="panel-desc">数値を変更して「保存する」を押すと、サイトに即反映されます。</p>
+
+      <form id="availability-form">
+        <div class="form-group-card">
+          <h3>地域密着型通所介護（デイサービス）</h3>
+          <div class="input-row">
+            <label>男女問わず</label>
+            <div class="input-with-unit">
+              <input type="number" id="day-count" value="14" min="0" max="999">
+              <span class="unit">名</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group-card">
+          <h3>短期入所生活介護（ショートステイ）</h3>
+          <div class="input-row">
+            <label>男性</label>
+            <div class="input-with-unit">
+              <input type="number" id="short-male" value="2" min="0" max="999">
+              <span class="unit">名</span>
+            </div>
+          </div>
+          <div class="input-row">
+            <label>女性</label>
+            <div class="input-with-unit">
+              <input type="number" id="short-female" value="2" min="0" max="999">
+              <span class="unit">名</span>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-save">保存する</button>
+      </form>
+
+      <p class="last-updated">最終更新: 2026年3月11日</p>
+    </section>
+
+    <!-- ===== TAB: News ===== -->
+    <section class="panel" id="tab-news" style="display:none;">
+      <h2>お知らせ管理</h2>
+
+      <div class="form-group-card">
+        <h3>新しいお知らせを追加</h3>
+        <form id="news-form">
+          <div class="input-row">
+            <label>日付</label>
+            <input type="date" id="news-date" value="2026-03-13">
+          </div>
+          <div class="input-row">
+            <label>種別</label>
+            <select id="news-category">
+              <option value="お知らせ">お知らせ</option>
+              <option value="イベント">イベント</option>
+            </select>
+          </div>
+          <div class="input-row">
+            <label>タイトル</label>
+            <input type="text" id="news-title" placeholder="お知らせのタイトル">
+          </div>
+          <div class="input-row">
+            <label>内容</label>
+            <textarea id="news-content" rows="3" placeholder="お知らせの内容（任意）"></textarea>
+          </div>
+          <div class="input-row">
+            <label>リンク先</label>
+            <input type="text" id="news-link" placeholder="/recruit など（任意）">
+          </div>
+          <button type="submit" class="btn-save">追加する</button>
+        </form>
+      </div>
+
+      <div class="news-admin-list">
+        <h3>登録済みのお知らせ</h3>
+        <div class="news-admin-item">
+          <div class="news-admin-info">
+            <span class="news-admin-date">2026-02-13</span>
+            <span class="news-admin-category category-info">お知らせ</span>
+            <span class="news-admin-title">求人情報を掲載しました</span>
+          </div>
+          <div class="news-admin-actions">
+            <button class="btn-delete" onclick="if(confirm('このお知らせを削除しますか？')){this.closest('.news-admin-item').remove();showAlert('お知らせを削除しました');}">削除</button>
+          </div>
+        </div>
+        <div class="news-admin-item">
+          <div class="news-admin-info">
+            <span class="news-admin-date">2025-10-25</span>
+            <span class="news-admin-category category-event">イベント</span>
+            <span class="news-admin-title">市民開放講座を開催します</span>
+          </div>
+          <div class="news-admin-actions">
+            <button class="btn-delete" onclick="if(confirm('このお知らせを削除しますか？')){this.closest('.news-admin-item').remove();showAlert('お知らせを削除しました');}">削除</button>
+          </div>
+        </div>
+        <div class="news-admin-item">
+          <div class="news-admin-info">
+            <span class="news-admin-date">2025-08-05</span>
+            <span class="news-admin-category category-info">お知らせ</span>
+            <span class="news-admin-title">求人情報を掲載しました</span>
+          </div>
+          <div class="news-admin-actions">
+            <button class="btn-delete" onclick="if(confirm('このお知らせを削除しますか？')){this.closest('.news-admin-item').remove();showAlert('お知らせを削除しました');}">削除</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Tab switching
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const target = tab.dataset.tab;
+        document.getElementById('tab-availability').style.display = target === 'availability' ? 'block' : 'none';
+        document.getElementById('tab-news').style.display = target === 'news' ? 'block' : 'none';
+      });
+    });
+
+    function showAlert(msg) {
+      const el = document.getElementById('success-alert');
+      el.textContent = msg;
+      el.style.display = 'block';
+      setTimeout(() => { el.style.display = 'none'; }, 3000);
+    }
+
+    // Availability form
+    document.getElementById('availability-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      showAlert('空き情報を更新しました（デモ）');
+    });
+
+    // News form
+    document.getElementById('news-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const title = document.getElementById('news-title').value;
+      if (!title) return;
+      const date = document.getElementById('news-date').value;
+      const cat = document.getElementById('news-category').value;
+      const catClass = cat === 'イベント' ? 'category-event' : 'category-info';
+
+      const item = document.createElement('div');
+      item.className = 'news-admin-item';
+      item.innerHTML = `
+        <div class="news-admin-info">
+          <span class="news-admin-date">${date}</span>
+          <span class="news-admin-category ${catClass}">${cat}</span>
+          <span class="news-admin-title">${title}</span>
+        </div>
+        <div class="news-admin-actions">
+          <button class="btn-delete" onclick="if(confirm('このお知らせを削除しますか？')){this.closest('.news-admin-item').remove();showAlert('お知らせを削除しました');}">削除</button>
+        </div>
+      `;
+      document.querySelector('.news-admin-list').insertBefore(item, document.querySelector('.news-admin-list').children[1]);
+      document.getElementById('news-title').value = '';
+      document.getElementById('news-content').value = '';
+      document.getElementById('news-link').value = '';
+      showAlert('お知らせを追加しました（デモ）');
+    });
+  </script>
+
+</body>
+</html>
