@@ -69,23 +69,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!container) return;
 
-      const items = data.items.slice(0, 5);
+      const items = data.items.slice(0, 4);
 
       container.innerHTML = items.map((item, i) => {
         const categoryClass = item.category === 'イベント'
-          ? 'news-category--event'
-          : 'news-category--info';
+          ? 'news-card-category--event'
+          : 'news-card-category--info';
 
-        const titleHtml = item.link
-          ? `<a href="${item.link}" class="news-title">${item.title}</a>`
-          : `<span class="news-title">${item.title}</span>`;
+        const imageHtml = item.image
+          ? `<img src="${item.image}" alt="${item.title}">`
+          : `<span class="news-card-placeholder">NEWS</span>`;
+
+        const tag = item.link ? 'a' : 'div';
+        const href = item.link ? ` href="${item.link}"` : '';
 
         return `
-          <div class="news-item fade-in" style="animation-delay: ${i * 0.08}s">
-            <span class="news-date">${formatDateShort(item.date)}</span>
-            <span class="news-category ${categoryClass}">${item.category}</span>
-            ${titleHtml}
-          </div>
+          <${tag}${href} class="news-card fade-in" style="animation-delay: ${i * 0.1}s">
+            <div class="news-card-image">
+              <span class="news-card-category ${categoryClass}">${item.category}</span>
+              ${imageHtml}
+            </div>
+            <div class="news-card-body">
+              <h3 class="news-card-title">${item.title}</h3>
+              <span class="news-card-date">${formatDateShort(item.date)}</span>
+            </div>
+          </${tag}>
         `;
       }).join('');
 
